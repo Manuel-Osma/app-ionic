@@ -7,11 +7,13 @@ import { Tab2Page } from './tab2.page';
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { ExploreContainerComponentModule } from 'src/app/explore-container/explore-container.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
+    ComponentsModule,
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { DeseosService } from '../../services/deseos.service';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
+import { DeseosService } from 'src/app/services/deseos.service';
 
 @Component({
   selector: 'app-tab1',
@@ -35,13 +35,13 @@ export class Tab1Page {
         },
         {
           text:'Crear',
-          handler(data) {
+          handler:(data) =>{
             console.log(data);
             if(data.titulo.length === 0){
               return;
             }
-            this.router.navigateByUrl('/tabs/tab1/agregar');
-
+            const listId = this.deseosService.crearLista(data.titulo);
+            this.router.navigateByUrl(`/tabs/tab1/agregar/${listId}`);
           }
         }
       ]

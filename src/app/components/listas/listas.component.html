@@ -1,0 +1,18 @@
+<ion-list>
+  <ion-item-sliding *ngFor="let listas of deseosService.listas">
+    <ion-item
+      (click)="listaSelecionada(listas)"
+      detail
+    >
+      <ion-label>{{ listas.titulo }}</ion-label>
+      <ion-note>{{ listas.items.length }}</ion-note>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option (click)="borrarLista( listas )" color="danger">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-item-option>
+    </ion-item-options>
+
+  </ion-item-sliding>
+</ion-list>
